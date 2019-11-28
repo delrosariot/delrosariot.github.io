@@ -1,0 +1,216 @@
+
+html,body {
+  margin: 0;
+  height: 100%;
+  background: #f7dfd4;
+  color: #323339;
+  font-family: Verdana, Sans-serif; 
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+
+header {
+	font-family: Verdana, Sans-serif; 
+	color: #eabcac;
+	background: #323339;
+	height: 160px;
+	position: relative; 
+	margin-bottom: 8px;
+	box-shadow: 2px 2px 8px 3px #888888;
+}
+nav {
+
+}
+section {
+	background: #fc03b1;
+}
+
+article {
+	background: #02f222;
+}
+
+aside {
+	background: #0b02fa;
+}
+ footer {
+ 	position: absolute;
+  	bottom: 0;
+  	width: 100%;
+  	height: 3rem; 
+ }
+
+ h1 {
+ 	font-size: 2.5em;
+ 	text-align: center;
+ 	margin-top: 0;
+ 	margin-bottom: 0;
+ }
+h2 {
+ 	font-size: 2em;
+}
+
+a {
+     text-decoration: none;
+    }
+ 
+.menu {
+	text-align: center;
+	font-size: 2em;
+}
+
+.title {
+	margin-top: 0;
+	margin-bottom: 5px;
+	/*background: #faf202;*/
+}
+.about {	
+	margin-left: 10px; 
+}
+.section{
+	margin-left: 0px;	
+}
+
+ .column {
+ 	background: #faf202;
+ 	 float: left;
+  	margin-left: 2%;
+  	margin-bottom: 2%;
+  	margin-top: 2%;
+  	height: 550px;
+  	width: 50px;
+ 	 transition: width 0.5s;
+  	-webkit-transition: width 0.5s;
+  	text-align: center;
+  	overflow: hidden;
+}
+
+.left {
+  	
+  	margin-right: 8%;
+	
+}
+.column:hover {
+  width: 425px;
+}
+
+.right {
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+#growContainer{
+	display: table;
+	width:100%;
+	height:550px;
+}
+.grow{
+	display: table-cell;
+	height:100%;
+	width: 33%;
+	-webkit-filter: grayscale(25%); /* Safari 6.0 - 9.0 */
+  	filter: grayscale(25%);
+	-webkit-transition:width 500ms;
+	-moz-transition:width 500ms;
+	transition:width 500ms;
+}
+#growContainer:hover .grow{
+	width:20%;
+}
+#growContainer:hover .grow:hover {
+	-webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
+  	filter: grayscale(0%);
+	width:40%;
+}
+
+/* Footer Settings */
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+#content-wrap {
+  padding-bottom: 3rem;    
+}
+
+#project1{
+	background-image: url("Kanji_2.jpg"); 
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+#project2{
+	background-image: url("PDB_1.png"); 
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+#project3{
+	background-image: url("Tree2Reads.png"); 
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+a:link {
+  color: #eabcac;
+}
+
+a:visited {
+  color: #b39084;
+}
+
+a:hover {
+  color: #f7dfd4;
+}
+
+a:active {
+  color: #eabcac;
+}
+
+#info a:link {
+  color: #323339;
+  text-decoration: none
+}
+#info a:visited {
+  color: #323339;
+  text-decoration: none
+}
+#info a:hover {
+  color: #323339;
+  text-decoration: none;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+hr { 
+  background-color: #323339; 
+  height: 2px; 
+  border: 0;
+  margin-top: 2.5em;
+  margin-bottom: 2.5em;
+  margin-left: -10px;
+  box-shadow: 2px 4px 8px 2px #323339;
+} 

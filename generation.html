@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>PokeFind</title>
+	<link href="../static/styles.css" rel="stylesheet" type="text/css">
+</head>
+
+<nav class="menu">
+	<a href="/"> Home </a>
+	<a href="legend"> Legendary Pokémon </a>
+	<a href="type"> Pokémon by Type </a>
+	<a href="stats"> Pokémon by Stats</a>
+	<a href="generation"> Pokémon by Generation</a>
+	
+ </nav>
+
+<div id="header">
+<header>
+	<h1>PokéFind</h1> 
+	 <div id="bar"> <label>Find your Pokémon!</label> </div>
+</header>
+</div>
+
+
+<div id="content">
+<body>
+	
+	<section>  <br>
+		<div class="middle"> <p> Click on a region to see all the Pokemon who live there! 
+			<br> If you're stuck, here's a handy guide:<br>
+			<ul>
+				<li>Generation 1: Click on Kanto!</li>
+				<li>Generation 2: Click on Johto!</li>
+				<li>Generation 3: Click on Hoenn!</li>
+				<li>Generation 4: Click on Sinnoh!</li>
+				<li>Generation 5: Click on Unova!</li>
+				<li>Generation 6: Click on Kalos!</li>
+			</ul>
+				<br>
+				If you're unsure which game is in which generation, click <a href= https://bulbapedia.bulbagarden.net/wiki/Core_series> here</a>.
+			</p>
+		<br>
+			 <img src="Map.png" alt="Region Map" usemap="#Pokemap"> 
+
+<map name="Pokemap">
+  <a href="/generation/1"> <area shape="rect" coords="456,337.5, 582,475.5" alt="Kanto" title="Generation 1"> </a>
+  <a href="/generation/2"> <area shape="rect" coords="285,327, 433,457" alt="Johto" title="Generation 2" > </a>
+  <a href="/generation/3"> <area shape="rect" coords="273,492, 505,639" alt="Hoenn" title="Generation 3" > </a>
+  <a href="/generation/4"> <area shape="rect" coords="169,648, 387,891" alt="Sinnoh" title="Generation 4" > </a>
+  <a href="/generation/5"> <area shape="rect" coords="742,450, 979,619" alt="Unova" title="Generation 5" > </a>
+  <a href="/generation/6"> <area shape="rect" coords="285,193, 480,301" alt="Kalos" title="Generation 6" > </a>
+	
+</map>
+			
+ 
+    </div>
+  
+  </section>
+    </body>
+   </div>
+</html>

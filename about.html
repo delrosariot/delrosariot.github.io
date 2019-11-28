@@ -1,0 +1,523 @@
+<!doctype html>
+<html>
+<head>
+        <meta charset="UTF-8">
+        <title>Portfolio</title>
+        <link href="about.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+         <div id="page-container">
+        <div id="content-wrap">
+
+        <header>
+                <h1>Thais Del Rosario</h1>
+                <nav class="menu">
+        <a  href="index.html" style="border: 1px solid gray; border-color: #eabcac;"> Home </a>
+        &nbsp;&nbsp;
+        <a  href="about.html" style="border: 1px solid gray; border-color: #eabcac;"> About Me </a>
+        &nbsp;&nbsp;
+        <a  href="projects.html" style="border: 1px solid gray; border-color: #eabcac;"> Projects </a>
+                </nav>
+        </header>
+
+        <div class="about"> 
+               <div style="display:none;">
+                <img id="CSharp" src="CSharpLogo.png" alt="C Sharp Logo">
+                 <img id="Blender" src="Blender_logo.png" alt="Blender Logo">
+                 <img id="Unity" src="UnityS.png" alt="Unity Logo">
+                 <img id="AR" src="AR_Logo.png" alt="AR Logo">
+                 <img id="Vuforia" src="Vuforia.png" alt="Vuforia Logo">
+                 <img id="Github" src="GitHub-Mark-120px-plus.png" alt="Github Logo">
+                 <img id="Bitbucket" src="bitbucket.png" alt="Bitbucket Logo">
+                 <img id="Python" src="Python_Logo.png" alt="Python Logo">
+                 <img id="Shell" src="ShellScript_Logo.png" alt="Shell Scripting Logo">
+                 <img id="BigData" src="BigData_Logo.png" alt="Big Data Logo">
+                 <img id="MixedReality" src="MixedReality_Logo.png" alt="MixedReality Logo">
+                 <img id="Java" src="Java.png" alt="Java Logo">
+                 <img id="SVG" src="svg-logo-v.png" alt="W3C SVG Logo">
+                </div>
+                 <p> Select any of the multiconnected logos to learn more about their specific applications within my experience. </p>
+
+            <canvas id="myCanvas" width="1300" height="1000">
+            Your browser does not support the HTML5 canvas tag.
+            </canvas>
+            <div id="baseModal" class="modal">
+
+                  <!-- Modal content -->
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <span class="close">&times;</span>
+                      <!--<h2>Modal Header</h2> -->
+                    </div>
+                    <div class="modal-body" id="description">
+                      <p>Some text in the Modal Body</p>
+                      <p>Some other text...</p>
+                    </div>
+                    <div class="modal-footer">
+                      <!--<h3>Modal Footer</h3>-->
+                    </div>
+                  </div>
+
+                </div>
+        </div>
+
+        
+
+         
+        
+        </div>
+        <footer>
+                <h1></h1>
+        </footer>
+        </div>
+
+        <script>
+        var modal = document.getElementById("baseModal");
+        var span = document.getElementsByClassName("close")[0];
+
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // window.onclick = function(event) {
+        //     if (event.target == modal) {
+        //         modal.style.display = "none";
+        // }
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+window.onload = function() {
+    
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    var d = document.getElementById("description");
+    //var canvasOffset = c.offset();
+    var offsetX = c.offsetLeft;
+    var offsetY = c.offsetTop;
+    //var offsetY = canvasOffset.top;
+
+    var logo = (function () {
+
+        // constructor
+        function logo(id,x,y,width,height,endX,endY, startX, startY,src) {
+            this.x=x;
+            this.y=y;
+            this.id=id;
+            this.width=width;
+            this.height=height;
+            this.startX = startX;
+            this.startY = startY;
+            this.endX = endX;
+            this.endY = endY;
+            this.src = src;
+        }
+        //
+        logo.prototype.draw = function () {
+                ctx.save();
+                ctx.beginPath();
+                ctx.drawImage(this.src, this.x, this.y, this.width, this.height);
+                ctx.restore();
+            }
+        //
+        logo.prototype.isPointInside = function(x,y){
+            return( x>=this.x 
+                    && x<=this.x+this.width
+                    && y>=this.y
+                    && y<=this.y+this.height);
+        }
+
+
+        return logo;
+    })();
+
+
+    // var img = document.getElementById("CSharp");
+    var img = new logo("Blender", 20, 220, 128, 128, 520, 480, 148, 348, document.getElementById("Blender"));
+    //var img2 = document.getElementById("Blender");
+    var img2 = new logo("BigData", 20, 530, 128, 128, -1,-1,-1,-1, document.getElementById("BigData"));
+    var img3 = new logo("Shell", 20, 790, 128, 128, 20 + 64, 530 + 128, 20 + 64, 790, document.getElementById("Shell"));
+    var img4 = new logo("Vuforia", 540, 20, 128, 128, 370 + 128, 170, 540, 20 + 128, document.getElementById("Vuforia"));
+    var img5 = new logo("AR", 370, 170, 128, 128, -1,-1,-1,-1, document.getElementById("AR"));
+    var img6 = new logo("Unity", 520, 480, 128, 128, -1,-1,-1,-1, document.getElementById("Unity"));
+    var img7 = new logo("Python", 600, 800, 128, 128, -1,-1,-1,-1, document.getElementById("Python"));
+    var img8 = new logo("MixedReality", 680, 240, 128, 128, 370 + 128, 170 + 64, 680, 240 + 64, document.getElementById("MixedReality"));
+    var img9 = new logo("Csharp", 890, 340, 128, 128, 520 + 128, 480 + 64, 890, 340 + 64, document.getElementById("CSharp"));
+    var img10 = new logo("Github", 780, 580, 128, 128, -1,-1,-1,-1, document.getElementById("Github"));
+    var img11 = new logo("Bitbucket", 910, 580, 128, 128, 1090, 650+64, 910 + 128 , 580 + 64, document.getElementById("Bitbucket"));
+    var img12 = new logo("Java", 1090, 650, 128, 128, 910 + 128, 580 + 64, 1090, 650 + 64, document.getElementById("Java"));
+    img.draw();
+    img2.draw();
+    img3.draw();
+    img4.draw();
+    img5.draw();
+    img6.draw();
+    img7.draw();
+    img8.draw();
+    img9.draw();
+    img10.draw();
+    img11.draw();
+    img12.draw();
+    var logos = [];
+    logos.push(img);
+    logos.push(img2);
+    logos.push(img3);
+    logos.push(img4);
+    logos.push(img5);
+    logos.push(img6);
+    logos.push(img7);
+    logos.push(img8);
+    logos.push(img9);
+    logos.push(img10);
+    logos.push(img11);
+    logos.push(img12);
+
+    //Current interval
+    var dashedLine;
+    //Second interval
+    var dashedLine2;
+    //Third interval
+    var dashedLine3;
+    //Fourth interval
+    var dashedLine4;
+
+    function redraw() {
+        var startsX;
+        var startsY;
+        var endsX;
+        var endsY;
+        logos[0].draw();
+        logos[1].draw();
+        logos[2].draw();
+        logos[3].draw();
+        logos[4].draw();
+        logos[5].draw();
+        logos[6].draw();
+        logos[7].draw();
+        logos[8].draw();
+        logos[9].draw();
+        logos[10].draw();
+        logos[11].draw();
+
+        // var startX3 = element.x + element.width;
+        // var startY3 = element.y + 64;
+        // var endX3 = logos[8].x;
+        // var endY3 = logos[8].y + 64;
+        // var startX4 = element.x + element.width;
+        // var startY4 = element.y + 64;
+        // var endX4 = logos[9].x;
+        // var endY4 = logos[9].y + 64;
+
+        startsX = [logos[0].x + 128, logos[1].x + 64, logos[1].x + 128, logos[4].x + 128, logos[4].x + 128, logos[4].x +64, logos[8].x, logos[9].x, logos[9].x, logos[11].x];
+        startsY = [logos[0].y + 128, logos[1].y + 128, logos[1].y + 128, logos[4].y, logos[4].y + 64, logos[4].y + 128, logos[8].y + 64, logos[9].y + 128, logos[9].y + 64, logos[11].y + 64];
+        endsX = [logos[5].x, logos[2].x + 64, logos[6].x, logos[3].x, logos[7].x, logos[5].x, logos[5].x + 128, logos[6].x + 128, logos[5].x + 128, logos[10].x + 128];
+        endsY = [logos[5].y, logos[2].y, logos[6].y, logos[3].y + 128, logos[7].y + 64, logos[5].y, logos[5].y + 64, logos[6].y, logos[5].y + 64, logos[10].y + 64];
+        var index = 0;
+        ctx.beginPath();
+        startsX.forEach(function() {
+            ctx.strokeStyle = "#778c95";
+            ctx.setLineDash([5, 15]);
+            ctx.moveTo(startsX[index], startsY[index]);
+            ctx.lineTo(endsX[index], endsY[index]);
+            ctx.stroke();
+            index += 1;
+        });
+        
+    }
+    redraw();
+
+  //ctx.drawImage(img, 10, 10, 128, 128);
+  //ctx.drawImage(img2, 450, 450, 128, 128);
+   c.addEventListener('click', function(event) {
+        var x = event.pageX - offsetX,
+        y = event.pageY - offsetY;
+        // Collision detection between clicked offset and element.
+        logos.forEach(function(element) {
+            if (element.isPointInside(x,y)) {
+                //var startX = element.x + element.width;
+                //var startY = element.y + element.height;
+                clearInterval(dashedLine);
+                clearInterval(dashedLine2);
+                clearInterval(dashedLine3);
+                clearInterval(dashedLine4);
+                ctx.clearRect(0, 0, c.width, c.height);
+                redraw();
+                ctx.beginPath();
+                //ctx.strokeStyle = "#778c95";
+                
+                //Single connection
+                if (element.endX != -1){
+                    var startX1 = element.startX;
+                    var startY1 = element.startY;
+                    var endX1 = element.endX;
+                    var endY1 = element.endY;
+                    var amount = 0;
+                    dashedLine = setInterval(function() {
+                        amount += 0.02; 
+                        if (amount > 1) amount = 1;
+                        ctx.strokeStyle = "black";
+                        ctx.setLineDash([5, 15]);
+                        ctx.moveTo(startX1, startY1);
+                        ctx.lineTo(startX1 + (endX1 - startX1) * amount, startY1 + (endY1 - startY1) * amount);
+                        ctx.stroke();
+                    }, 30);
+                }
+
+                else{
+
+                    if(element.id == "BigData"){
+                         d.innerHTML = "<p> I have developed multiple pipelines to analyze metagenomic data using <b>Python</b> and <b>Bash</b> scripts. </p>";
+                        var startX1 = element.x + element.width;
+                        var startY1 = element.y + element.height;
+                        var endX1 = logos[6].x;
+                        var endY1 = logos[6].y;
+                        var startX2 = element.x + 64;
+                        var startY2 = element.y + element.height;
+                        var endX2 = logos[2].x + 64;
+                        var endY2 = logos[2].y;
+                        var amount = 0;
+                        dashedLine = setInterval(function() {
+                            amount += 0.02; 
+                            if (amount > 1) amount = 1;
+                            ctx.strokeStyle = "black";
+                            ctx.setLineDash([5, 15]);
+                            ctx.moveTo(startX1, startY1);
+                            ctx.lineTo(startX1 + (endX1 - startX1) * amount, startY1 + (endY1 - startY1) * amount);
+                            ctx.stroke();
+                        }, 30);
+                        var amount2 = 0;
+                        dashedLine2 = setInterval(function() {
+                            amount2 += 0.02; 
+                            if (amount2 > 1) amount2 = 1;
+                            ctx.strokeStyle = "black";
+                            ctx.setLineDash([5, 15]);
+                            ctx.moveTo(startX2, startY2);
+                            ctx.lineTo(startX2 + (endX2 - startX2) * amount2, startY2 + (endY2 - startY2) * amount2);
+                            ctx.stroke();
+                        }, 30);
+                        modal.style.display = "block";
+                    }
+                    else if(element.id == "Python"){
+                        d.innerHTML = "<p> I have experience using <b>Python</b> throughout my academic career as well as to analyze <b>big data</b>. Specifically, I have written scripts to simulate and analyze sequencing data and metagenomic data, respectively. </p>";
+                        var startX1 = element.x;
+                        var startY1 = element.y;
+                        var endX1 = logos[1].x + element.width;
+                        var endY1 = logos[1].y + element.height;
+                        var startX2 = element.x + element.width;
+                        var startY2 = element.y;
+                        var endX2 = logos[9].x;
+                        var endY2 = logos[9].y + element.height;
+                        var amount = 0;
+                        dashedLine = setInterval(function() {
+                            amount += 0.02; 
+                            if (amount > 1) amount = 1;
+                            ctx.strokeStyle = "black";
+                            ctx.setLineDash([5, 15]);
+                            ctx.moveTo(startX1, startY1);
+                            ctx.lineTo(startX1 + (endX1 - startX1) * amount, startY1 + (endY1 - startY1) * amount);
+                            ctx.stroke();
+                        }, 30);
+                        var amount2 = 0;
+                        dashedLine2 = setInterval(function() {
+                            amount2 += 0.02; 
+                            if (amount2 > 1) amount2 = 1;
+                            ctx.strokeStyle = "black";
+                            ctx.setLineDash([5, 15]);
+                            ctx.moveTo(startX2, startY2);
+                            ctx.lineTo(startX2 + (endX2 - startX2) * amount2, startY2 + (endY2 - startY2) * amount2);
+                            ctx.stroke();
+                        }, 30);
+                        modal.style.display = "block";
+                    }
+                    else if(element.id == "Github"){
+                        d.innerHTML = "<p> I have experience being a member of multiple teams to complete academic assignments, work tasks, and laboratory techniques. I have used version control software <b>Github</b> and <b>Bitbucket</b> to manage these projects. </p>";
+                        var startX1 = element.x;
+                        var startY1 = element.y + 64;
+                        var endX1 = logos[5].x + element.width;
+                        var endY1 = logos[5].y + 64;
+                        var startX2 = element.x;
+                        var startY2 = element.y + element.height;
+                        var endX2 = logos[6].x + element.width;
+                        var endY2 = logos[6].y;
+                        var amount = 0;
+                        dashedLine = setInterval(function() {
+                            amount += 0.02; 
+                            if (amount > 1) amount = 1;
+                            ctx.strokeStyle = "black";
+                            ctx.setLineDash([5, 15]);
+                            ctx.moveTo(startX1, startY1);
+                            ctx.lineTo(startX1 + (endX1 - startX1) * amount, startY1 + (endY1 - startY1) * amount);
+                            ctx.stroke();
+                        }, 30);
+                        var amount2 = 0;
+                        dashedLine2 = setInterval(function() {
+                            amount2 += 0.02; 
+                            if (amount2 > 1) amount2 = 1;
+                            ctx.strokeStyle = "black";
+                            ctx.setLineDash([5, 15]);
+                            ctx.moveTo(startX2, startY2);
+                            ctx.lineTo(startX2 + (endX2 - startX2) * amount2, startY2 + (endY2 - startY2) * amount2);
+                            ctx.stroke();
+                        }, 30);
+                        modal.style.display = "block";
+                    }
+                    //More than 2 connections
+
+                    else if(element.id == "AR"){
+                        d.innerHTML = "<p> I have developed mobile <b> Extended Reality </b> applications that enhance user learning and simplify data/information visualization. These apps have been developed using <b> Unity </b> and <b> Vuforia </b> (Android, Augmented Reality) and Microsoft's <b> Mixed Reality Tool Kit </b> (Microsoft Hololens, Mixed Reality). </p>";
+                        var startX1 = element.x + 128;
+                        var startY1 = element.y;
+                        var endX1 = logos[3].x;
+                        var endY1 = logos[3].y + element.height;
+                        var startX2 = element.x + element.width;
+                        var startY2 = element.y + 64;
+                        var endX2 = logos[7].x;
+                        var endY2 = logos[7].y + 64;
+                        var startX3 = element.x + 64;
+                        var startY3 = element.y + element.height;
+                        var endX3 = logos[5].x;
+                        var endY3 = logos[5].y;
+                        var amount = 0;
+                        dashedLine = setInterval(function() {
+                            amount += 0.02; 
+                            if (amount > 1) amount = 1;
+                            ctx.strokeStyle = "black";
+                            ctx.setLineDash([5, 15]);
+                            ctx.moveTo(startX1, startY1);
+                            ctx.lineTo(startX1 + (endX1 - startX1) * amount, startY1 + (endY1 - startY1) * amount);
+                            ctx.stroke();
+                        }, 30);
+                        var amount2 = 0;
+                        dashedLine2 = setInterval(function() {
+                            amount2 += 0.02; 
+                            if (amount2 > 1) amount2 = 1;
+                            ctx.strokeStyle = "black";
+                            ctx.setLineDash([5, 15]);
+                            ctx.moveTo(startX2, startY2);
+                            ctx.lineTo(startX2 + (endX2 - startX2) * amount2, startY2 + (endY2 - startY2) * amount2);
+                            ctx.stroke();
+                        }, 30);
+                        var amount3 = 0;
+                        dashedLine3 = setInterval(function() {
+                            amount3 += 0.02; 
+                            if (amount3 > 1) amount3 = 1;
+                            ctx.strokeStyle = "black";
+                            ctx.setLineDash([5, 15]);
+                            ctx.moveTo(startX3, startY3);
+                            ctx.lineTo(startX3 + (endX3 - startX3) * amount3, startY3 + (endY3 - startY3) * amount3);
+                            ctx.stroke();
+                        }, 30);
+                        modal.style.display = "block";
+
+                    }
+                   /* else if(element.id == "Python"){
+                        var startX1 = element.x;
+                        var startY1 = element.y;
+                        var endX1 = logos[9].x + 64;
+                        var endY1 = logos[9].y + element.height;
+                        var startX2 = element.x;
+                        var startY2 = element.y;
+                        var endX2 = logos[1].x + element.width;
+                        var endY2 = logos[1].y + element.height;
+                        var amount = 0;
+                        dashedLine = setInterval(function() {
+                            amount += 0.02; 
+                            if (amount > 1) amount = 1;
+                            ctx.strokeStyle = "black";
+                            ctx.setLineDash([5, 15]);
+                            ctx.moveTo(startX1, startY1);
+                            ctx.lineTo(startX1 + (endX1 - startX1) * amount, startY1 + (endY1 - startY1) * amount);
+                            ctx.stroke();
+                        }, 30);
+                        var amount2 = 0;
+                        dashedLine2 = setInterval(function() {
+                            amount2 += 0.02; 
+                            if (amount2 > 1) amount2 = 1;
+                            ctx.strokeStyle = "black";
+                            ctx.setLineDash([5, 15]);
+                            ctx.moveTo(startX2, startY2);
+                            ctx.lineTo(startX2 + (endX2 - startX2) * amount2, startY2 + (endY2 - startY2) * amount2);
+                            ctx.stroke();
+                        }, 30);
+                    }*/
+
+                    else if(element.id == "Unity"){
+                        d.innerHTML = "<p> I've used Unity to implement multiplatform applications using <b>C#</b>, Unity's <b>AR Foundation</b> APIs, and <b>Blender</b> for basic 3D modeling. These projects have been managed using Git for source control in the form of <b> Github </b> or <b> Bitbucket</b>, depending on the project. </p>";
+                        var startX1 = element.x;
+                        var startY1 = element.y;
+                        var endX1 = logos[0].x + element.width;
+                        var endY1 = logos[0].y + element.height;
+                        var startX2 = element.x;
+                        var startY2 = element.y;
+                        var endX2 = logos[4].x + 64;
+                        var endY2 = logos[4].y + element.height;
+                        var startX3 = element.x + element.width;
+                        var startY3 = element.y + 64;
+                        var endX3 = logos[8].x;
+                        var endY3 = logos[8].y + 64;
+                        var startX4 = element.x + element.width;
+                        var startY4 = element.y + 64;
+                        var endX4 = logos[9].x;
+                        var endY4 = logos[9].y + 64;
+                        var amount = 0;
+                        dashedLine = setInterval(function() {
+                            amount += 0.02; 
+                            if (amount > 1) amount = 1;
+                            ctx.strokeStyle = "black";
+                            /*ctx.lineWidth = 3;*/
+                            ctx.setLineDash([5, 15]);
+                            ctx.moveTo(startX1, startY1);
+                            ctx.lineTo(startX1 + (endX1 - startX1) * amount, startY1 + (endY1 - startY1) * amount);
+                            ctx.stroke();
+                        }, 30);
+                        var amount2 = 0;
+                        dashedLine2 = setInterval(function() {
+                            amount2 += 0.02; 
+                            if (amount2 > 1) amount2 = 1;
+                            ctx.strokeStyle = "black";
+                            ctx.setLineDash([5, 15]);
+                            ctx.moveTo(startX2, startY2);
+                            ctx.lineTo(startX2 + (endX2 - startX2) * amount2, startY2 + (endY2 - startY2) * amount2);
+                            ctx.stroke();
+                        }, 30);
+                        var amount3 = 0;
+                        dashedLine3 = setInterval(function() {
+                            amount3 += 0.02; 
+                            if (amount3 > 1) amount3 = 1;
+                            ctx.strokeStyle = "black";
+                            ctx.setLineDash([5, 15]);
+                            ctx.moveTo(startX3, startY3);
+                            ctx.lineTo(startX3 + (endX3 - startX3) * amount3, startY3 + (endY3 - startY3) * amount3);
+                            ctx.stroke();
+                        }, 30);
+                        var amount4 = 0;
+                        dashedLine4 = setInterval(function() {
+                            amount4 += 0.02; 
+                            if (amount4 > 1) amount4 = 1;
+                            ctx.strokeStyle = "black";
+                            ctx.setLineDash([5, 15]);
+                            ctx.moveTo(startX4, startY4);
+                            ctx.lineTo(startX4 + (endX4 - startX4) * amount4, startY4 + (endY4 - startY4) * amount4);
+                            ctx.stroke();
+                        }, 30);
+                        modal.style.display = "block";
+
+                    }
+
+                }
+
+            }
+        });
+
+    }, false);
+
+}
+</script>
+
+
+</script>
+
+</body>
+</html>

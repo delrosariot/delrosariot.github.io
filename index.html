@@ -1,1 +1,64 @@
-"Hello World" 
+<!doctype html>
+<html>
+<head>
+        <meta charset="UTF-8">
+        <title>Portfolio</title>
+        <link href="main.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+         <div id="page-container">
+        <div id="content-wrap">
+
+        <header>
+                <h1>Thais Del Rosario</h1>
+                <nav class="menu">
+        <a  href="index.html" style="border: 1px solid gray; border-color: #eabcac;"> Home </a>
+        &nbsp;&nbsp;
+        <a  href="about.html" style="border: 1px solid gray; border-color: #eabcac;"> About Me </a>
+        &nbsp;&nbsp;
+        <a  href="projects.html" style="border: 1px solid gray; border-color: #eabcac;"> Projects </a>
+                </nav>
+        </header>
+
+        <div class="about"> 
+                <!-- <img src="giphy0.gif" alt="Cute Bunny" style="width:80px;height:80px;float:right;" onmouseover="this.src='giphy.gif';" onclick="loadHelper()"  /> -->
+               
+                <h2 style="text-align:left"> Who am I? </h2>
+                <p> I am a senior at Carleton College majoring in Biology and Computer Science. So far, I've worked on bettering users' learning experiences through the development of mobile and desktop applications, and I've contributed to research projects within the field of Bioinformatics. </p>
+        </div>
+
+        <div class="title"> 
+         <h1>Projects</h1>
+         </div>
+
+         <div id="growContainer">
+        <div class="grow" id="project1" onclick="window.location.href='projects.html#Project1'"> <img id="one"  onmouseover = ""/> </div>
+        <div class="grow" id="project2" onclick="window.location.href='projects.html#Project2'"> <img id="two"  onmouseover = ""/></div>
+        <div class="grow" id="project3" onclick="window.location.href='projects.html#Project3'"> <img id="three"  onmouseover = ""/></div>
+        </div>
+        
+        </div>
+        <footer>
+                <h1></h1>
+        </footer>
+        </div>
+
+        <script>
+function loadHelper() {
+        var x = document.getElementById("one");
+        x.src = "giphy0.gif";
+        x.alt = "Cute Bunny";
+        x.style = "width:80px;height:80px;float:right;";
+        x.onmouseover = function() {setOnMouseOver(x)};
+}
+
+function setOnMouseOver(y){
+        y.src = "giphy.gif";
+
+}
+
+
+</script>
+
+</body>
+</html>

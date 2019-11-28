@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+        <meta charset="UTF-8">
+        <title>Portfolio</title>
+        <link href="main.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+         <div id="page-container">
+        <div id="content-wrap">
+
+        <header>
+                <h1>Thais Del Rosario</h1>
+                <nav class="menu">
+        <a  href="index.html" style="border: 1px solid gray; border-color: #eabcac;"> Home </a>
+        &nbsp;&nbsp;
+        <a  href="about.html" style="border: 1px solid gray; border-color: #eabcac;"> About Me </a>
+        &nbsp;&nbsp;
+        <a  href="projects.html" style="border: 1px solid gray; border-color: #eabcac;"> Projects </a>
+                </nav>
+        </header>
+
+        <div id="info" class="about"> 
+                <!-- <img src="giphy0.gif" alt="Cute Bunny" style="width:80px;height:80px;float:right;" onmouseover="this.src='giphy.gif';" onclick="loadHelper()"  /> -->
+                 <div class="title"> 
+                 <h1>Projects</h1>
+                </div>
+
+                <a name="Project1"> <h2 style="text-align:left"> Japanese Kanji Writing App </h2> </a>
+                <a href="Kanji_2.png" ><img src="Kanji_1.png" alt="Kanji App Main Menu" style="float:right;width:320px;height:180px;" /></a>
+                <p> This Kanji writing app helps students of the language learn the correct stroke order to write more than 6,000 kanji. This collection can be queried by the radicals they are composed of, the number of strokes it takes to write the character, and the grade they are taught in schools. After selecting a character, the user 
+                can proceed to write said character with the help of "guiding points". The user can alter the difficulty by selecting how many guiding points are shown to help them write each stroke of the character, as well as how close their stroke needs to be to the guiding points to be considered an successful stroke. After the user finishes writing the character, their accuracy will be evaluated based on how many guiding points they sucessfully hit and if they hit them in the correct order, as there is a canonical stroke-drawing order for each Kanji.</p>
+                <p>All of this data is stored within the SVG file for each Kanji, which means that more Kanji can be added by simply obtaining an SVG file representing them.</p>
+                <a href="Kanji_4.png" ><img src="Kanji_4.png" alt="Kanji Writing Process" style="width:320px;height:180px;" /></a>
+                <hr>
+                <a name="Project2"> <h2 style="text-align:left"> AR Protein Visualizer (Mobile) </h2> </a>
+                <a href="PDB_2.png" ><img src="PDB_2.png" alt="Protein on Cartoon View" style="float:right;width:320px;height:180px;" /></a>
+                <p> PDB files describe various biological structures in text format and are freely available at RCSB's protein data bank <b> <a href="https://www.rcsb.org/" style="color: #9D6099"> website </a> </b>. This visualizer parses PDB files and displays them using 3D objects, allowing the user to customize how they are represented. Files can be downloaded from the PDB data bank directly from the device running the app if it has an internet connection. The 3D models are viewed using Unity's AR Foundation package and can be placed in surfaces recognized by the device's camera to provide a augmented learning experience. After placement, the molecular structure can be rotated, scaled, moved, and customized. Regarding customization, the user can select from six viewing modes which allow for a more complete understanding of the molecule's structure. Additionally, the user can change the color and size of specific components within each viewing mode (e.g. atoms, chains, beta sheets, helixes). </p>
+                <a href="PDB_3.png" ><img src="PDB_3.png" alt="Protein on String Backbone View" style="width:320px;height:180px;" /></a> <a href="PDB_4.png" ><img src="PDB_4.png" alt="Protein on Atom View" style="width:320px;height:180px;" /></a> <a href="PDB_5.png" ><img src="PDB_5.png" alt="Protein on Atom View" style="width:320px;height:180px;" /></a>
+                <hr>
+                <a name="Project3"> <h2 style="text-align:left"> Mutated Sequenced Data Simulator </h2> </a>
+                <a href="Tree2Reads.png" ><img src="Tree2ReadsT.png" alt="Flowchart of Pipeline to Generate Simulated Data" style="float:right;width:320px;height:180px;" /></a>
+                <p> This pipeline allows the user to simulate sequenced data for a heterogeneous cancer tumor using an evolution tree of the mutations of said tumor in dot format as input. The output data is in the form of a set of reads in a FASTQ file. It makes use of the read simulator NEAT genreads. The pipeline takes as input a reference file from which to generate the reads (e.g. Chromosome 19 from the human genome), a tree of the mutations to be generated along with a list of the percents associated with each of the nodes, and two sets of VCFs (unless the user wants random mutations). </p>
+                <p> The data generated from this pipeline is useful when testing tools meant to determine the evolutionary tree of a tumor from a patient's sequenced data. Using real data to test these tools proves to be a challenge due to the lack of a "true" answer to evaluate the tool's output. Since the user knows the "true" answer when using sequenced data, they can effectively test the accuracy of these tools. The pipeline can be pulled from <b> <a href="https://github.com/delrosariot/tree2reads" style="color: #9D6099"> this </a> </b> repo, along with more specific instructions and requirements on its use. </p>
+                
+        </div>
+        
+        </div>
+        <footer>
+                <h1></h1>
+        </footer>
+        </div>
+
+
+</body>
+</html>
